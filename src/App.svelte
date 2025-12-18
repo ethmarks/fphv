@@ -1,15 +1,36 @@
 <script>
     import { sha256 } from "./lib/sha256";
 
+    const MIN_MATCH_LENGTH = 4;
+
     let input = "";
     let output = "";
+
+    function findMatch(hash, text) {
+        // Start with longest possible prefix and work down
+        for (let len = hash.length; len >= MIN_MATCH_LENGTH; len--) {
+            const prefix = hash.substring(0, len);
+            if (text.toLowerCase().includes(prefix)) {
+                return prefix;
+            }
+        }
+        return "";
+    }
 
     async function handleInput() {
         if (input.trim() === "") {
             output = "";
             return;
         }
-        output = await sha256(input);
+
+        const hash = await sha256(input);
+        const match = findMatch(hash, input);
+
+        if (match !== "") {
+            output = hash + "\n" + match + " ✔";
+        } else {
+            output = hash;
+        }
     }
 </script>
 
