@@ -63,7 +63,7 @@
     <p>
         Created by <a href="https://github.com/ethmarks">ethmarks</a>
         |
-        <a href="https://github.com/ethmarks/fphf/hash-verify">Source Code</a>
+        <a href="https://github.com/ethmarks/fphv">Source Code</a>
     </p>
 </footer>
 
