@@ -1,10 +1,14 @@
+body,
+#app {
+    height: var(--vvh, 100dvh);
+    transition: height 0.2s ease-in-out;
+}
+
 body {
-    height: 100vh;
     margin: 0 auto;
 }
 
 #app {
-    height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: center;

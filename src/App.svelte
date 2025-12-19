@@ -1,10 +1,21 @@
 <script>
+    import { onMount } from "svelte";
     import { sha256 } from "./lib/sha256";
 
     const MIN_MATCH_LENGTH = 4;
 
     let input = "";
     let output = "";
+
+    // visual viewport height
+    onMount(() => {
+        window.visualViewport.addEventListener("resize", () =>
+            document.documentElement.style.setProperty(
+                "--vvh",
+                `${window.visualViewport.height}px`,
+            ),
+        );
+    });
 
     function findMatch(hash, text) {
         // Start with longest possible prefix and work down
