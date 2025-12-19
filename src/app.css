@@ -1,11 +1,10 @@
-body,
-#app {
-    height: var(--vvh, 100dvh);
-    transition: height 0.2s ease-in-out;
-}
-
 body {
+    height: var(--vvh, 100dvh);
     margin: 0 auto;
+    transition: height 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 #app {
