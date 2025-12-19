@@ -59,6 +59,7 @@
             bind:value={input}
             on:input={handleInput}
             placeholder="The SHA-256 hash of this sentence begins with b43c8b9."
+            rows="3"
         ></textarea>
         <label for="output">SHA-256 Hash</label>
         <textarea
@@ -66,6 +67,7 @@
             bind:value={output}
             disabled
             placeholder="b43c8b96f151033a566e148d45c43aa84ba153ff9407397f23d5eb43112bb5e1"
+            rows="3"
         ></textarea>
     </div>
 </main>
